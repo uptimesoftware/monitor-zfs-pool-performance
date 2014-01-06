@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uptimesoftware.com/erdc/erdc erdc" xmlns="http://www.uptimesoftware.com/erdc/erdc" xmlns:upt="http://www.uptimesoftware.com/erdc/erdc" version="4.0" target_grouping="other">
+	<class>ZFS Pool Performance Monitor</class>
+	<exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+	<elements>
+		<element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+			<control_options> size:40 </control_options>
+			<default_value>scripts/ZFS_Pool_Performance_Monitor/ZFS_Pool_Performance_Monitor.sh</default_value>
+			<short_description>Script Name</short_description>
+			<long_description>Name of the script/binary/process to be executed by up.time </long_description>
+			<validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='UPTIME_HOSTNAME' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>Hostname</short_description>
+			<long_description>Hostname of Solaris server</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='UPTIME_PORT' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value>9998</default_value>
+			<validation_rule/><error_message/>
+			<short_description>Agent Port</short_description>
+			<long_description>Port number of uptime agent</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='UPTIME_ZPOOL_PASSWORD' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>Agent Password</short_description>
+			<long_description>Password of uptime agent set for this script</long_description>
+			<gui_type><password/></gui_type>
+		</element>
+		<element name='UPTIME_ZPOOL_SCRIPT' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value>/opt/uptime-agent/scripts/ZFS_Pool_Performance_Monitor.sh</default_value>
+			<validation_rule/><error_message/>
+			<short_description>Agent Script</short_description>
+			<long_description>Name and location of zpool script on Agent</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='capacity_alloc' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Capacity Allocated</short_description>
+			<long_description>Allocated</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='capacity_free' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Capacity Free</short_description>
+			<long_description>Free</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='operations_read' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Operations Read</short_description>
+			<long_description>Reads</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='operations_write' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Operations Write</short_description>
+			<long_description>Writes</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='bandwidth_read' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Read Bandwidth</short_description>
+			<long_description>Bandwidth Read</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='bandwidth_write' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Write Bandwidth</short_description>
+			<long_description>Bandwidth Write</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name="timer" parameter_type="output" data_type="integer" gui_basic="0" range_type="0" units="ms">
+			<control_options>size:8</control_options>
+			<default_value/>
+			<short_description>Response time</short_description>
+			<long_description>Response time in ms</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+	</elements>
+	<help>When running a custom script check, note that the second parameter is always the name of the assigned host. The script that's executed should output each variable on it's own line, otherwise up.time won't be able to capture the appropriate information.</help>
+</uptime>
+
+
+
+

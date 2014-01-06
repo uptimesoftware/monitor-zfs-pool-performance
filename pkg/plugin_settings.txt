@@ -1,0 +1,6 @@
+name=ZFS Pool Performance Monitor
+version=1.0
+platforms=linux windows
+description=This plugin connects to a Solaris client and reports on ZFS pool capacity, read/write operations and bandwidth.
+requiresAgentScript=false
+restartCore=false
