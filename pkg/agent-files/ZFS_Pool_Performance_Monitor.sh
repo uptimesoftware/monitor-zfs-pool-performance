@@ -1,2 +1,2 @@
-#!/bin/sh
-/usr/local/uptime/apache/bin/php zpoolstat.php
+#!/bin/bash
+/usr/sbin/zpool iostat -v
