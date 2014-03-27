@@ -56,7 +56,7 @@
 		</element>
 		<element name='UPTIME_ZPOOL_SCRIPT' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
 			<control_options>size:8</control_options>
-			<default_value>/opt/uptime-agent/scripts/monitor-zfs-pool-performance-agent.sh</default_value>
+			<default_value>/opt/uptime-agent/scripts/ZFS_Pool_Performance_Monitor.sh</default_value>
 			<validation_rule/><error_message/>
 			<short_description>Agent Script</short_description>
 			<long_description>Name and location of zpool script on Agent</long_description>
