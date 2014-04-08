@@ -6,7 +6,7 @@ $scri = $_SERVER['UPTIME_UPTIME_ZPOOL_SCRIPT'];
 if($host == ''){
     $host = $_SERVER['UPTIME_HOSTNAME'];
 }
-$cmd = "..\agentcmd -p $port $host rexec $pass $scri";
+$cmd = "../../../scripts/agentcmd -p $port $host rexec $pass $scri";
 $output = shell_exec($cmd);
 $out_arr_sin = preg_split("/\n/",$output);
 unset($out_arr_sin[0]);
