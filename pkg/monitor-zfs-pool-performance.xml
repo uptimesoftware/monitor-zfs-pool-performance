@@ -2,7 +2,7 @@
 <uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="7.3" target_grouping="other">
 	<class>ZFS Pool Performance Monitor</class>
 	<exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
-	<erdc_version>2.0</erdc_version>
+	<erdc_version>2.1</erdc_version>
 	<category>Operating System Monitors</category>
 	<category_related>Storage Monitors</category_related>
 	<grid_info>
