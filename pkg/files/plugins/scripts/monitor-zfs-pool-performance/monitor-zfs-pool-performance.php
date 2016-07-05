@@ -1,8 +1,13 @@
 <?php
 require('rcs_function.php');
 
+if(isset($_SERVER['UPTIME_UPTIME_HOSTNAME'])) {
+	$host = $_SERVER['UPTIME_UPTIME_HOSTNAME'];
+}
+else {
+	$host = $_SERVER['UPTIME_HOSTNAME'];
+}
 $port = $_SERVER['UPTIME_UPTIME_PORT'];
-$host = $_SERVER['UPTIME_UPTIME_HOSTNAME'];
 $pass = $_SERVER['UPTIME_UPTIME_ZPOOL_PASSWORD'];
 $scri = $_SERVER['UPTIME_UPTIME_ZPOOL_SCRIPT'];
 
@@ -38,9 +43,6 @@ function size_string_to_mb($str) {
 	return $size;
 }
 
-if($host == ''){
-    $host = $_SERVER['UPTIME_HOSTNAME'];
-}
 
 /*if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
     $cmd = "..\..\..\scripts\agentcmd -s -p $port $host rexec $pass $scri";
@@ -49,7 +51,7 @@ if($host == ''){
 }
 $output = shell_exec($cmd);*/
 
-$output = uptime_remote_custom_monitor($host, $port, $pass, $scri);
+$output = uptime_remote_custom_monitor($host, $port, $pass, $scri, '');
 
 $out_arr_sin = preg_split("/\n/",$output);
 //print_r($out_arr_sin);
