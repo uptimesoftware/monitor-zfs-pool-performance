@@ -15,15 +15,15 @@ function size_string_to_mb($str) {
 	switch ($str) {
 		case (preg_match('/P$/', $str) ? true : false):
 			// PB
-			$multiplier = 0.000000001;
+			$multiplier = 1000000000;
 			break;
 		case (preg_match('/T$/', $str) ? true : false):
 			// TB
-			$multiplier = 0.000001;
+			$multiplier = 1000000;
 			break;
 		case (preg_match('/G$/', $str) ? true : false):
 			// GB
-			$multiplier = 0.001;
+			$multiplier = 1000;
 			break;
 		case (preg_match('/M$/', $str) ? true : false):
 			// MB
@@ -31,7 +31,7 @@ function size_string_to_mb($str) {
 			break;
 		case (preg_match('/K$/', $str) ? true : false):
 			// KB
-			$multiplier = 1000;
+			$multiplier = 0.001;
 			break;
 		default:
 			// unknown; pass $str back unchanged
