@@ -113,7 +113,7 @@ for($i=2;$i<count($out_arr_sin);$i++)
 					
 					echo $resarr[0].".".$headarr[$k]."_".$subheadarr[1]." " .$alloc."\n";
 					echo $resarr[0].".".$headarr[$k]."_".$subheadarr[2]." " .$free."\n";
-					continue;
+					// continue;
 					break;
 				case 1: // operations header
 					$a = 3;
@@ -127,7 +127,7 @@ for($i=2;$i<count($out_arr_sin);$i++)
 					break;
 				case 3: // latency header - unsupported
 				default: 
-					continue;
+					// continue;
 					break;
 			}
 		}	
